@@ -36,10 +36,55 @@ To write a Python program that:
 ---
 
 ## 💻 Program
-Add code here
+```
 
+# Node class
+    # Append node at end
+    def append(self, data):
+        new_node = Node(data)
+
+        if self.head is None:
+            self.head = new_node
+            return
+
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+
+        temp.next = new_node
+
+    # Recursive function to find middle
+    def get_middle_recursive(self, slow, fast):
+        # Base condition
+        if fast is None or fast.next is None:
+            return slow
+
+        return self.get_middle_recursive(slow.next, fast.next.next)
+
+    # Wrapper function
+    def find_middle(self):
+        if self.head is None:
+            return None
+
+        middle_node = self.get_middle_recursive(self.head, self.head)
+        return middle_node.data
+
+
+# Main program
+ll = LinkedList()
+
+n = int(input("Enter number of elements: "))
+
+for i in range(n):
+    value = int(input("Enter value: "))
+    ll.append(value)
+
+result = ll.find_middle()
+
+print("Middle element:", result)
+```
 ## Sample Input & Output
-
+<img width="635" height="450" alt="image" src="https://github.com/user-attachments/assets/158ea927-988d-4a7f-9368-27fd70e87443" />
 ## Result
-
+The program is exucted successfully and the output is verified
 
