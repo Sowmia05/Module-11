@@ -85,6 +85,8 @@ print("Middle element:", result)
 ```
 ## Sample Input & Output
 <img width="635" height="450" alt="image" src="https://github.com/user-attachments/assets/158ea927-988d-4a7f-9368-27fd70e87443" />
+
+
 ## Result
 The program is exucted successfully and the output is verified
 
