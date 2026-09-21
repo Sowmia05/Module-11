@@ -35,9 +35,103 @@ To write a Python program that:
 ---
 
 ## 💻 Program
-Add Code here
+# Node class
+
+# Doubly Linked List class
+class DoublyLinkedList:
+    def __init__(self):
+        self.start_node = None
+
+    # Insert when list is empty
+    def insert_in_emptylist(self, data):
+        new_node = Node(data)
+        self.start_node = new_node
+
+    # Insert at end
+    def insert_at_end(self, data):
+        if self.start_node is None:
+            self.insert_in_emptylist(data)
+            return
+
+        new_node = Node(data)
+        temp = self.start_node
+
+        while temp.nref is not None:
+            temp = temp.nref
+
+        temp.nref = new_node
+        new_node.pref = temp
+
+    # Traverse list
+    def traverse_list(self):
+        if self.start_node is None:
+            print("List is empty")
+            return
+
+        temp = self.start_node
+        while temp is not None:
+            print(temp.item, end=" ")
+            temp = temp.nref
+        print()
+
+
+# Main program
+```
+# Node class
+# Doubly Linked List class
+class DoublyLinkedList:
+    def __init__(self):
+        self.start_node = None
+
+    # Insert when list is empty
+    def insert_in_emptylist(self, data):
+        new_node = Node(data)
+        self.start_node = new_node
+
+    # Insert at end
+    def insert_at_end(self, data):
+        if self.start_node is None:
+            self.insert_in_emptylist(data)
+            return
+
+        new_node = Node(data)
+        temp = self.start_node
+
+        while temp.nref is not None:
+            temp = temp.nref
+
+        temp.nref = new_node
+        new_node.pref = temp
+
+    # Traverse list
+    def traverse_list(self):
+        if self.start_node is None:
+            print("List is empty")
+            return
+
+        temp = self.start_node
+        while temp is not None:
+            print(temp.item, end=" ")
+            temp = temp.nref
+        print()
+
+
+# Main program
+dll = DoublyLinkedList()
+
+n = int(input("Enter number of elements: "))
+
+for i in range(n):
+    value = int(input("Enter value: "))
+    dll.insert_at_end(value)
+
+print("Doubly Linked List elements:")
+dll.traverse_list()
+```
 
 ## Sample Output
+<img width="357" height="191" alt="image" src="https://github.com/user-attachments/assets/b11a8d66-dc76-4700-9742-7ab9941ac110" />
 
 ## Result
+The program is exucted successfully and the output is verified
 
