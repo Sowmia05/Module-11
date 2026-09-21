@@ -34,9 +34,68 @@ To write a Python program that:
 ---
 
 ## 💻 Program
-Add Code here
+```
+# Node class
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+
+
+# Doubly Linked List class
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+
+    # Insert at beginning
+    def insert_beginning(self, data):
+        new_node = Node(data)
+
+        if self.head is None:
+            self.head = new_node
+            return
+
+        new_node.next = self.head
+        self.head.prev = new_node
+        self.head = new_node
+
+    # Insert at end
+    def insert_end(self, data):
+        new_node = Node(data)
+
+        if self.head is None:
+            self.head = new_node
+            return
+
+        temp = self.head
+        while temp.next is not None:
+            temp = temp.next
+
+        temp.next = new_node
+        new_node.prev = temp
+
+    # Search element
+    def search(self, key):
+        temp = self.head
+        position = 1
+
+        while temp is not None:
+            if temp.data == key:
+                print(f"Element {key} found at position {position}")
+                return
+            temp = temp.next
+            position += 1
+
+        print(f"Element {key} not found in the list")
+
+dll.search(key)
+
+```
 
 ## Sample Output
+<img width="342" height="151" alt="image" src="https://github.com/user-attachments/assets/9f187d92-9512-47c0-885f-2cef08196fbe" />
 
 ## Result
+The program is exucted successfully and the output is verified
 
